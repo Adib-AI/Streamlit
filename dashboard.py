@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #Pembacaan Dataset
-path = "HTI-master\HTI-master\PRSA_Data_20130301-20170228"
+path = "PRSA_Data_20130301-20170228"
 df_Aotizhongxin = pd.read_csv(path+'\PRSA_Data_Aotizhongxin_20130301-20170228.csv')
 df_Changping = pd.read_csv(path+'\PRSA_Data_Changping_20130301-20170228.csv')
 df_Dingling = pd.read_csv(path+'\PRSA_Data_Dingling_20130301-20170228.csv')
