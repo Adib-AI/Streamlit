@@ -5,10 +5,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #Pembacaan Dataset
-path = "PRSA_Data_20130301-20170228\"
-df_Aotizhongxin = pd.read_csv(path+'PRSA_Data_Aotizhongxin_20130301-20170228.csv')
-df_Changping = pd.read_csv(path+'PRSA_Data_Changping_20130301-20170228.csv')
-df_Dingling = pd.read_csv(path+'PRSA_Data_Dingling_20130301-20170228.csv')
+path = "PRSA_Data_20130301-20170228"
+df_Aotizhongxin = pd.read_csv(path+'\PRSA_Data_Aotizhongxin_20130301-20170228.csv')
+df_Changping = pd.read_csv(path+'\PRSA_Data_Changping_20130301-20170228.csv')
+df_Dingling = pd.read_csv(path+'\PRSA_Data_Dingling_20130301-20170228.csv')
 
 df = pd.concat([df_Aotizhongxin,df_Changping,df_Dingling], ignore_index=True)
 df.drop(columns = ['No'], axis = 1, inplace=True)
