@@ -65,13 +65,7 @@ tab1,tab2,tab3 = st.tabs(["Pertanyaan 1", "Pertanyaan 2", "Pertanyaan 3"])
 with tab1:
     st.subheader("1. Apakah terdapat korelasi faktor penting yang disebutkan di atas terhadap TEMP (Temperature), DEWP (Dew Point), PRES (Pressure), Rain?")
     # Function Korelasi
-    fig, ax = plt.subplots(figsize=(15,10))
-    sns.heatmap(df[kolom_yang_digunakan].corr(method='spearman'), annot = True, annot_kws={'fontsize':17}, linewidths=0.1, ax = ax)
-    plt.xticks(fontsize = 15)
-    plt.yticks(fontsize = 15)
-    plt.show()
-
-    fig2, ax = plt.subplots(4,6, figsize=(15,5), sharex = False)
+    fig, ax = plt.subplots(4,6, figsize=(15,5), sharex = False)
 
     sns.scatterplot(data = df, x = kolom_yang_digunakan[0], y = kolom_yang_digunakan[6], ax = ax[0][0])
     sns.scatterplot(data = df, x = kolom_yang_digunakan[1], y = kolom_yang_digunakan[6], ax = ax[0][1])
@@ -152,7 +146,6 @@ with tab1:
     plt.show()
 
     st.pyplot(fig)
-    st.pyplot(fig2)
     with st.expander("Hasil Analisis"):
         st.write("""Hasil menunjukkan, nilai korelasi faktor penting udara dengan TEMP, RES, DEWP dan RAIN 
         berada pada jenis Moderate Correlation (Tingkat Menengah) menuju Low Correlation (Tingkat Lemah). 
@@ -189,9 +182,6 @@ with tab2:
     ax.legend(loc = 2)
 
     st.pyplot(figure)
-    
-
-    st.dataframe(frame_mean)
     with st.expander("Hasil Analisis"):
         st.write("""Aotizhongxin merupakan statsiun yang memiliki tingkat rata-rata faktor kualitas udara tertinggi 
         dari statsiun yang lain kecuali faktor O3, sedangkan Dingling merupakan stasiun yang memiliki 
