@@ -4,6 +4,9 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
+#Jika Pada streamlit gunakan simbol "\"
+
 #Pembacaan Dataset
 path = "PRSA_Data_20130301-20170228"
 df_Aotizhongxin = pd.read_csv(path+'/PRSA_Data_Aotizhongxin_20130301-20170228.csv')
@@ -15,7 +18,7 @@ df.drop(columns = ['No'], axis = 1, inplace=True)
 df['year'] = df['year'].astype("str")
 
 #Kolom Utama yang digunakan untuk analisis
-kolom_yang_digunakan = df.select_dtypes(include='number').columns[4:14]
+kolom_yang_digunakan = df.select_dtypes(include='number').columns[3:13]
 
 #Filter Data Berdasarkan Kolom
 filter_Aotizhongxin = df[df['station'] == 'Aotizhongxin'].iloc[:,0:10]
@@ -67,7 +70,89 @@ with tab1:
     plt.xticks(fontsize = 15)
     plt.yticks(fontsize = 15)
     plt.show()
+
+    fig2, ax = plt.subplots(4,6, figsize=(15,5), sharex = False)
+
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[0], y = kolom_yang_digunakan[6], ax = ax[0][0])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[1], y = kolom_yang_digunakan[6], ax = ax[0][1])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[2], y = kolom_yang_digunakan[6], ax = ax[0][2])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[3], y = kolom_yang_digunakan[6], ax = ax[0][3])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[4], y = kolom_yang_digunakan[6], ax = ax[0][4])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[5], y = kolom_yang_digunakan[6], ax = ax[0][5])
+
+    ax[0][0].xaxis.set_visible(False)
+    ax[0][1].xaxis.set_visible(False)
+    ax[0][2].xaxis.set_visible(False)
+    ax[0][3].xaxis.set_visible(False)
+    ax[0][4].xaxis.set_visible(False)
+    ax[0][5].xaxis.set_visible(False)
+
+    ax[0][1].yaxis.set_visible(False)
+    ax[0][2].yaxis.set_visible(False)
+    ax[0][3].yaxis.set_visible(False)
+    ax[0][4].yaxis.set_visible(False)
+    ax[0][5].yaxis.set_visible(False)
+
+
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[0], y = kolom_yang_digunakan[7], ax = ax[1][0])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[1], y = kolom_yang_digunakan[7], ax = ax[1][1])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[2], y = kolom_yang_digunakan[7], ax = ax[1][2])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[3], y = kolom_yang_digunakan[7], ax = ax[1][3])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[4], y = kolom_yang_digunakan[7], ax = ax[1][4])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[5], y = kolom_yang_digunakan[7], ax = ax[1][5])
+
+    ax[1][0].xaxis.set_visible(False)
+    ax[1][1].xaxis.set_visible(False)
+    ax[1][2].xaxis.set_visible(False)
+    ax[1][3].xaxis.set_visible(False)
+    ax[1][4].xaxis.set_visible(False)
+    ax[1][5].xaxis.set_visible(False)
+
+    ax[1][1].yaxis.set_visible(False)
+    ax[1][2].yaxis.set_visible(False)
+    ax[1][3].yaxis.set_visible(False)
+    ax[1][4].yaxis.set_visible(False)
+    ax[1][5].yaxis.set_visible(False)
+
+
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[0], y = kolom_yang_digunakan[8], ax = ax[2][0])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[1], y = kolom_yang_digunakan[8], ax = ax[2][1])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[2], y = kolom_yang_digunakan[8], ax = ax[2][2])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[3], y = kolom_yang_digunakan[8], ax = ax[2][3])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[4], y = kolom_yang_digunakan[8], ax = ax[2][4])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[5], y = kolom_yang_digunakan[8], ax = ax[2][5])
+
+    ax[2][0].xaxis.set_visible(False)
+    ax[2][1].xaxis.set_visible(False)
+    ax[2][2].xaxis.set_visible(False)
+    ax[2][3].xaxis.set_visible(False)
+    ax[2][4].xaxis.set_visible(False)
+    ax[2][5].xaxis.set_visible(False)
+
+    ax[2][1].yaxis.set_visible(False)
+    ax[2][2].yaxis.set_visible(False)
+    ax[2][3].yaxis.set_visible(False)
+    ax[2][4].yaxis.set_visible(False)
+    ax[2][5].yaxis.set_visible(False)
+
+
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[0], y = kolom_yang_digunakan[9], ax = ax[3][0])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[1], y = kolom_yang_digunakan[9], ax = ax[3][1])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[2], y = kolom_yang_digunakan[9], ax = ax[3][2])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[3], y = kolom_yang_digunakan[9], ax = ax[3][3])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[4], y = kolom_yang_digunakan[9], ax = ax[3][4])
+    sns.scatterplot(data = df, x = kolom_yang_digunakan[5], y = kolom_yang_digunakan[9], ax = ax[3][5])
+
+    ax[3][1].yaxis.set_visible(False)
+    ax[3][2].yaxis.set_visible(False)
+    ax[3][3].yaxis.set_visible(False)
+    ax[3][4].yaxis.set_visible(False)
+    ax[3][5].yaxis.set_visible(False)
+
+    plt.show()
+
     st.pyplot(fig)
+    st.pyplot(fig2)
     with st.expander("Hasil Analisis"):
         st.write("""Hasil menunjukkan, nilai korelasi faktor penting udara dengan TEMP, RES, DEWP dan RAIN 
         berada pada jenis Moderate Correlation (Tingkat Menengah) menuju Low Correlation (Tingkat Lemah). 
@@ -87,6 +172,25 @@ with tab2:
     frame_mean['Max Kota'] = ["Aotizhongxin" if np.max([frame_mean.Mean_Aotizhongxin[i],frame_mean.Mean_Changping[i],frame_mean.Mean_Dingling[i]]) == frame_mean.Mean_Aotizhongxin[i] else("Changping" if np.max([frame_mean.Mean_Aotizhongxin[i],frame_mean.Mean_Changping[i],frame_mean.Mean_Dingling[i]]) == frame_mean.Mean_Changping[i] else "Dingling") for i in range(len(frame_mean))]
     frame_mean['Min Kota'] = ["Aotizhongxin" if np.min([frame_mean.Mean_Aotizhongxin[i],frame_mean.Mean_Changping[i],frame_mean.Mean_Dingling[i]]) == frame_mean.Mean_Aotizhongxin[i] else("Changping" if np.min([frame_mean.Mean_Aotizhongxin[i],frame_mean.Mean_Changping[i],frame_mean.Mean_Dingling[i]]) == frame_mean.Mean_Changping[i] else "Dingling") for i in range(len(frame_mean))]
 
+    figure,ax = plt.subplots(figsize=(15,5))
+
+    fig.subplots_adjust(hspace=0.7, top=0.75)
+    x = np.arange(len(frame_mean['features']))
+
+    bar1 = ax.bar(x - 0.3, frame_mean['Mean_Aotizhongxin'], width=0.3,label = 'Aotizhongxin')
+    bar2 = ax.bar(x, frame_mean['Mean_Changping'], width=0.3,label = 'Changping')
+    bar3 = ax.bar(x + 0.3, frame_mean['Mean_Dingling'], width=0.3,label = 'Dingling')
+
+    ax.set_xlabel('faktor kualitas udara', fontsize = 17, labelpad = 20)
+    ax.set_ylabel('Values',fontsize = 20)
+    plt.suptitle(x = 0.5, y=1.05 ,t="Perbandingan rata-rata fakotr kualiatas Udara", fontsize = 20, fontweight = 'bold')
+    ax.set_title(x = 0.5, y=1.07, label='Berdasarkan Stasiun', fontsize = 18)
+    plt.xticks(x, frame_mean['features'])
+    ax.legend(loc = 2)
+
+    st.pyplot(figure)
+    
+
     st.dataframe(frame_mean)
     with st.expander("Hasil Analisis"):
         st.write("""Aotizhongxin merupakan statsiun yang memiliki tingkat rata-rata faktor kualitas udara tertinggi 
@@ -100,7 +204,7 @@ with tab3:
     #Parameter PM2.5,PM10, SO2, NO2, O3
     fig,ax = plt.subplots(1,3, figsize = (15,5), sharex=True)
     fig.subplots_adjust(hspace=0.7, top=0.7)
-    fig.suptitle('Nilai rata-rata PM2.5, PM10, SO2, NO2, O3')
+    fig.suptitle('Nilai rata-rata PM2.5, PM10, SO2, NO2, O3', fontsize = 20, fontweight='bold')
     fig.text(0.5,0.9,'Tahun 2013-2017', horizontalalignment="center")
     sns.set(style = 'darkgrid')
 
@@ -111,7 +215,7 @@ with tab3:
     ax[0].plot(year_Aotizhongxin_params['year'].values, year_Aotizhongxin_params['NO2'].values, label = 'NO2')
     ax[0].plot(year_Aotizhongxin_params['year'].values, year_Aotizhongxin_params['O3'].values, label = 'O3')
     ax[0].legend(bbox_to_anchor=(0.85,1.25), loc =2, borderaxespad = 0., ncol = len(ax[0].lines))
-
+    ax[0].set_ylabel("Values", fontsize = 15, labelpad = 20)
 
     ax[1].title.set_text('Changping')
     ax[1].plot(year_Changping_params['year'].values, year_Changping_params['PM2.5'].values, label = 'PM2.5', linestyle = "--")
@@ -119,7 +223,7 @@ with tab3:
     ax[1].plot(year_Changping_params['year'].values, year_Changping_params['SO2'].values, label = 'SO2')
     ax[1].plot(year_Changping_params['year'].values, year_Changping_params['NO2'].values, label = 'NO2')
     ax[1].plot(year_Changping_params['year'].values, year_Changping_params['O3'].values, label = 'O3')
-
+    ax[1].set_xlabel("Tahun", fontsize = 15, labelpad = 20)
 
     ax[2].title.set_text('Dingling')
     ax[2].plot(year_Dingling_params['year'].values, year_Dingling_params['PM2.5'].values, label = 'PM2.5', linestyle = "--")
@@ -133,16 +237,18 @@ with tab3:
     fig2,ax = plt.subplots(1,3, figsize = (15,5), sharex=True)
 
     fig2.subplots_adjust(hspace=0.7, top=0.75)
-    fig2.suptitle('Nilai rata-rata CO')
+    fig2.suptitle('Nilai rata-rata CO',fontsize = 20, fontweight='bold')
     fig2.text(0.5,0.9,'Tahun 2013-2017', horizontalalignment="center")
     sns.set(style = 'darkgrid')
 
     ax[0].title.set_text('Aotizhongxin')
     ax[0].plot(year_Aotizhongxin_params['year'].values, year_Aotizhongxin_params['CO'].values)
+    ax[0].set_ylabel("Values", fontsize = 15, labelpad = 20)
 
 
     ax[1].title.set_text('Changping')
     ax[1].plot(year_Changping_params['year'].values, year_Changping_params['CO'].values)
+    ax[1].set_xlabel("Tahun", fontsize = 15, labelpad = 20)
 
 
     ax[2].title.set_text('Dingling')
